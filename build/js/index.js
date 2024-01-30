@@ -42,12 +42,12 @@ const total = (...nums) => {
 };
 logMsg(total(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 // never type
-// function createError(err: string): never {
-//   throw new Error(err);
-// }
 const createError = (err) => {
     throw new Error(err);
 };
+// function createError(err: string): never {
+//   throw new Error(err);
+// }
 const numOrString = (value) => {
     if (typeof value === "string")
         return "string";
@@ -55,3 +55,5 @@ const numOrString = (value) => {
         return "number";
     return createError("this should never happen");
 };
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//calsses

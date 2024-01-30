@@ -84,3 +84,16 @@ const numOrString = (value: number | string): string => {
   if (typeof value === "number") return "number";
   return createError("this should never happen");
 };
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// assertions
+
+type One = string;
+type Two = string | number;
+type Three = "hello";
+
+// convert to more or less specific
+
+let a: One = "Hi there";
+let b = a as Two; // less specific
+let c = a as Three; // more speific

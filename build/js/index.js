@@ -6,48 +6,29 @@ const tool = {
     genre: "progressive rock",
     grammy: 4,
 };
-// console.log(tool.albums);
-/////////////////////////////////////////////////////////////////////////
-// Literal types
 let myName;
 let userName;
-/////////////////////////////////////////////////////////////////////////
-//functions
-// functions that do not return anything implicitly returns a void
 function logMsg(message) {
     console.log(message);
 }
 function add(a, b) {
     return a + b;
 }
-// interface mathFunc {
-//   (a: number, b: number): number;
-// }
 let multuply = (a, b) => a * b;
-// optional params
 const addAll = (a, b, c) => {
     if (typeof c !== "undefined")
         return a + b + c;
     return a + b;
 };
-console.log(addAll(2, 2));
-// default params
 const sumAll = (a, b, c = 2) => {
     return a + b + c;
 };
-console.log(sumAll(2, 2));
-// Rest params
 const total = (...nums) => {
     return nums.reduce((a, b) => a + b, 0);
 };
-logMsg(total(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-// never type
 const createError = (err) => {
     throw new Error(err);
 };
-// function createError(err: string): never {
-//   throw new Error(err);
-// }
 const numOrString = (value) => {
     if (typeof value === "string")
         return "string";
@@ -55,5 +36,60 @@ const numOrString = (value) => {
         return "number";
     return createError("this should never happen");
 };
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//calsses
+let a = "Hi there";
+let b = a;
+let c = a;
+class Coder {
+    constructor(name, music, age, lang = "typescript") {
+        this.name = name;
+        this.music = music;
+        this.age = age;
+        this.lang = lang;
+        this.name = name;
+        this.music = music;
+        this.age = age;
+        this.lang = lang;
+    }
+    getAge() {
+        return this.age;
+    }
+}
+const arv = new Coder("Arvind", "prog", 30);
+class WebDev extends Coder {
+    constructor(computer, name, music, age) {
+        super(name, music, age);
+        this.computer = computer;
+        this.computer = computer;
+    }
+    getLang() {
+        return this.lang;
+    }
+}
+const wd = new WebDev("M3pro", "arvind", "music", 30);
+class Guitarist {
+    constructor(name, instrument) {
+        this.name = name;
+        this.instrument = instrument;
+    }
+    play(action) {
+        return `${this.name} is ${action} the ${this.instrument}`;
+    }
+}
+const arvind = new Guitarist("Arvind", "guitar");
+class Peeps {
+    static getCount() {
+        return Peeps.count;
+    }
+    constructor(name) {
+        this.name = name;
+        this.name = name;
+        this.id = ++Peeps.count;
+    }
+    getDetails() {
+        return `Employee name is ${this.name} and employee id is ${this.id}`;
+    }
+}
+Peeps.count = 0;
+const John = new Peeps("John");
+const June = new Peeps("June");
+const Mark = new Peeps("Mark");

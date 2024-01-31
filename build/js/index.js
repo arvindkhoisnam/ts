@@ -39,6 +39,7 @@ const numOrString = (value) => {
 let a = "Hi there";
 let b = a;
 let c = a;
+<<<<<<< HEAD
 const addOrConcat = (a, b, c) => {
     if (c === "add")
         return a + b;
@@ -48,3 +49,59 @@ let myVal = addOrConcat(2, 3, "add");
 let newVal = addOrConcat(2, 3, "add");
 console.log(newVal);
 console.log(typeof newVal);
+=======
+class Coder {
+    constructor(name, music, age, lang = "typescript") {
+        this.name = name;
+        this.music = music;
+        this.age = age;
+        this.lang = lang;
+        this.name = name;
+        this.music = music;
+        this.age = age;
+        this.lang = lang;
+    }
+    getAge() {
+        return this.age;
+    }
+}
+const arv = new Coder("Arvind", "prog", 30);
+class WebDev extends Coder {
+    constructor(computer, name, music, age) {
+        super(name, music, age);
+        this.computer = computer;
+        this.computer = computer;
+    }
+    getLang() {
+        return this.lang;
+    }
+}
+const wd = new WebDev("M3pro", "arvind", "music", 30);
+class Guitarist {
+    constructor(name, instrument) {
+        this.name = name;
+        this.instrument = instrument;
+    }
+    play(action) {
+        return `${this.name} is ${action} the ${this.instrument}`;
+    }
+}
+const arvind = new Guitarist("Arvind", "guitar");
+class Peeps {
+    static getCount() {
+        return Peeps.count;
+    }
+    constructor(name) {
+        this.name = name;
+        this.name = name;
+        this.id = ++Peeps.count;
+    }
+    getDetails() {
+        return `Employee name is ${this.name} and employee id is ${this.id}`;
+    }
+}
+Peeps.count = 0;
+const John = new Peeps("John");
+const June = new Peeps("June");
+const Mark = new Peeps("Mark");
+>>>>>>> 598621279b60242fe0c65ca4e162294831890d50

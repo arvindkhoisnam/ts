@@ -97,23 +97,3 @@ type Three = "hello";
 let a: One = "Hi there";
 let b = a as Two; // less specific
 let c = a as Three; // more speific
-
-const addOrConcat = (
-  a: number,
-  b: number,
-  c: "add" | "concat"
-): number | string => {
-  if (c === "add") return a + b;
-  return "" + a + b;
-};
-
-let myVal: string = addOrConcat(2, 3, "add") as string;
-// console.log(myVal);
-let newVal: number = addOrConcat(2, 3, "add") as number;
-// console.log(newVal);
-// console.log(typeof newVal);
-
-const img = document.getElementById("img") as HTMLImageElement;
-const newImg = document.querySelector("img")!;
-img.src;
-newImg.src;

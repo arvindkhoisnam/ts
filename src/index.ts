@@ -54,20 +54,20 @@ const addAll = (a: number, b: number, c?: number): number => {
   if (typeof c !== "undefined") return a + b + c;
   return a + b;
 };
-console.log(addAll(2, 2));
+// console.log(addAll(2, 2));
 
 // default params
 const sumAll = (a: number, b: number, c: number = 2): number => {
   return a + b + c;
 };
-console.log(sumAll(2, 2));
+// console.log(sumAll(2, 2));
 
 // Rest params
 const total = (...nums: number[]): number => {
   return nums.reduce((a, b) => a + b, 0);
 };
 
-logMsg(total(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+// logMsg(total(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 
 // never type
 
@@ -97,3 +97,23 @@ type Three = "hello";
 let a: One = "Hi there";
 let b = a as Two; // less specific
 let c = a as Three; // more speific
+
+const addOrConcat = (
+  a: number,
+  b: number,
+  c: "add" | "concat"
+): number | string => {
+  if (c === "add") return a + b;
+  return "" + a + b;
+};
+
+let myVal: string = addOrConcat(2, 3, "add") as string;
+// console.log(myVal);
+let newVal: number = addOrConcat(2, 3, "add") as number;
+// console.log(newVal);
+// console.log(typeof newVal);
+
+const img = document.getElementById("img") as HTMLImageElement;
+const newImg = document.querySelector("img")!;
+img.src;
+newImg.src;
